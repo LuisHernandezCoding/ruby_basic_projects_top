@@ -31,7 +31,7 @@ def stock_picker2(prices)
   prices.each_with_index.map { |price, index| [price, index] }
         .combination(2)
         .map { |a, b| [a, b, b[0] - a[0]] }
-        .max_by { |a, b, c| c }
+        .max_by { |_, _, c| c }
         .slice(0, 2)
         .map { |a| a[1] }
 end
