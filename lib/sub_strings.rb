@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Implement a method #substrings that takes a word as the first argument and
 # then an array of valid substrings (your dictionary) as the second argument.
 # It should return a hash listing each substring (case insensitive) that was
@@ -9,7 +7,7 @@
 # Solution 1
 #
 def substrings(string, dictionary)
-  string_array = string.downcase.split(' ')
+  string_array = string.downcase.split
   string_array.each_with_object(Hash.new(0)) do |word, hash|
     dictionary.each do |substring|
       hash[substring] += 1 if word.include?(substring)
@@ -21,7 +19,7 @@ end
 # Solution 2
 #
 def substrings2(string, dictionary)
-  words = string.downcase.split(' ')
+  words = string.downcase.split
   output_hash = {}
   dictionary.each do |substring|
     words.each do |word|
@@ -53,13 +51,13 @@ def generic_test()
   p 'actual string:'
   p string
   p 'solution 1:'
-  p substrings("below", dictionary)
+  p substrings('below', dictionary)
   p substrings(string, dictionary)
   p 'solution 2:'
-  p substrings2("below", dictionary)
+  p substrings2('below', dictionary)
   p substrings2(string, dictionary)
   p 'solution 3:'
-  p substrings3("below", dictionary)
+  p substrings3('below', dictionary)
   p substrings3(string, dictionary)
 end
 
@@ -68,12 +66,12 @@ puts 'Enter 1 to run generic test or 2 to enter a string:'
 input = gets.chomp
 case input
 when '1'
-  generic_test()
+  generic_test
 when '2'
   puts 'Enter a string:'
   string = gets.chomp
   puts 'Enter a dictionary:'
-  dictionary = gets.chomp.split(' ')
+  dictionary = gets.chomp.split
   puts 'Enter 1 for solution 1, 2 for solution 2 or 3 for solution 3:'
   input = gets.chomp
   case input

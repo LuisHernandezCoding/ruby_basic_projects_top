@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Implement a method #stock_picker that takes in an array of stock prices, one for each hypothetical day.
 # It should return a pair of days representing the best day to buy and the best day to sell.
 # Days start at 0.
@@ -13,14 +11,14 @@
 def stock_picker(stock_prices)
   output = []
   best_difference = 0
-  stock_prices.each_with_index{ |day, day_index|
-    stock_prices[day_index..].each_with_index{ |day2, day_index_from1|
+  stock_prices.each_with_index do |day, day_index|
+    stock_prices[day_index..].each_with_index do |day2, day_index_from1|
       next if day2 <= day || best_difference > day2 - day
 
       best_difference = day2 - day
       output = [day_index, day_index_from1 + day_index]
-    }
-  }
+    end
+  end
   output
 end
 
@@ -28,12 +26,14 @@ end
 # Solution 2:
 #
 def stock_picker2(prices)
-  prices.each_with_index.map { |price, index| [price, index] }
-        .combination(2)
-        .map { |a, b| [a, b, b[0] - a[0]] }
-        .max_by { |_, _, c| c }
-        .slice(0, 2)
-        .map { |a| a[1] }
+  prices
+    .each_with_index
+    .map { |price, index| [price, index] }
+    .combination(2)
+    .map { |a, b| [a, b, b[0] - a[0]] }
+    .max_by { |_, _, c| c }
+    .slice(0, 2)
+    .map { |a| a[1] }
 end
 
 #
@@ -59,7 +59,7 @@ when '1'
   stock_prices = [17, 3, 6, 9, 15, 8, 6, 1, 10]
 when '2'
   p 'Enter the stock prices separated by space'
-  stock_prices = gets.chop.split(' ').map(&:to_i)
+  stock_prices = gets.chop.split.map(&:to_i)
 else
   p 'Invalid input'
 end

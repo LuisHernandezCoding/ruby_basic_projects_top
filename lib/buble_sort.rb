@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Build a method #bubble_sort that takes an array and returns a sorted array.
 # It must use the bubble sort methodology (using #sort would be pretty pointless, wouldn’t it?)
 #
@@ -58,7 +56,7 @@ when '1'
   array = [4, 3, 78, 2, 0, 2]
 when '2'
   p 'Enter the array of numbers separated by space'
-  array = gets.chop.split(' ').map(&:to_i)
+  array = gets.chop.split.map(&:to_i)
 end
 p 'Which solution do you want to run?'
 p 'Enter 1, 2 , 3 or all'

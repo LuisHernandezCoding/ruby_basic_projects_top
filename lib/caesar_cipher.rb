@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Implement a caesar cipher that takes in a string and the shift factor and then outputs the modified string:
 # > caesar_cipher("What a string!", 5)
 # => "Bmfy f xywnsl!"
@@ -15,17 +13,19 @@ def caesar_cipher(string, shift)
   encrypter = ([*('a'..'z')].zip([*('a'..'z')].rotate(shift)) + [*('A'..'Z')].zip([*('A'..'Z')].rotate(shift))).to_h
   string.chars.map { |char| encrypter.fetch(char, char) }
 end
+
 #
 # Solution 2
 #
 def caesar_cipher2(string, shift)
   alphabet = Array('a'..'z')
-  non_caps = Hash[alphabet.zip(alphabet.rotate(shift))]
+  non_caps = alphabet.zip(alphabet.rotate(shift)).to_h
   alphabet = Array('A'..'Z')
-  caps = Hash[alphabet.zip(alphabet.rotate(shift))]
+  caps = alphabet.zip(alphabet.rotate(shift)).to_h
   encrypter = non_caps.merge(caps)
   string.chars.map { |char| encrypter.fetch(char, char) }
 end
+
 #
 # Solution 3
 #
@@ -37,14 +37,11 @@ def caesar_cipher3(string, shift)
     if char.match?(/[[:alpha:]]/)
       char_to_add = char
       shift.times do
-        case char_to_add
-        when 'z'
-          char_to_add = 'a'
-        when 'Z'
-          char_to_add = 'A'
-        else
-          char_to_add = char_to_add.next
-        end
+        char_to_add = case char_to_add
+                      when 'z' then 'a'
+                      when 'Z' then 'A'
+                      else char_to_add.next
+                      end
       end
       new_string_array.push(char_to_add)
     else
