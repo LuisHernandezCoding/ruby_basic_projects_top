@@ -153,7 +153,7 @@ module MenuCaesarCipher
     system('clear') or system('cls')
     print_message(message, 102, 'bg_black', 'bg_green')
     print_input_field(100, 'bg_black')
-    string = ask_for_input(%w[a..z A..Z])
+    string = gets.chomp
     message = getting_caesar_cipher_title
     message << 'Enter the shift factor:'
     system('clear') or system('cls')
