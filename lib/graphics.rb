@@ -14,7 +14,7 @@ module Graphics
     title << '|  ___/ \'__/ _ \| |/ _ \/ __| __/ __| \ \ / // /  '
     title << '| |   | | | (_) | |  __/ (__| |_\__ \  \ V // /_  '
     title << '|_|   |_|  \___/| |\___|\___|\__|___/   \_/|____| '
-    title << '              _/ |                                '
+    title << '              _/ |  BY: @luishernandezcoding      '
     title << '             |__/                                 '
     title
   end
@@ -30,6 +30,7 @@ module Graphics
     title << '     \___ \ / _ \| \'__| __|     '
     title << '      ___) | (_) | |  | |_      '
     title << '     |____/ \___/|_|   \__|     '
+    title << '        BY: @luishernandezcoding'
     title << '                                '
     title
   end
@@ -45,7 +46,8 @@ module Graphics
     title << ' | |   | | \'_ \| \'_ \ / _ \ \'__| '
     title << ' | |___| | |_) | | | |  __/ |    '
     title << '  \____|_| .__/|_| |_|\___|_|    '
-    title << '         |_|                     '
+    title << '      BY:|_| @luishernandezcoding'
+    title << '                                 '
     title
   end
 
@@ -60,6 +62,7 @@ module Graphics
     title << '| |_) | |/ __| |/ / _ \ \'__|'
     title << '|  __/| | (__|   <  __/ |   '
     title << '|_|   |_|\___|_|\_\___|_|   '
+    title << '    BY: @luishernandezcoding'
     title << '                            '
     title
   end
@@ -75,7 +78,8 @@ module Graphics
     title << '\___ \| __| \'__| | \'_ \ / _` / __| '
     title << ' ___) | |_| |  | | | | | (_| \__ \ '
     title << '|____/ \__|_|  |_|_| |_|\__, |___/ '
-    title << '                         |___/      '
+    title << 'BY: @luishernandezcoding|___/      '
+    title << '                                   '
     title
   end
 
