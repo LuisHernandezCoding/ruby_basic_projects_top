@@ -6,7 +6,7 @@ module CaesarCipher
   # Solution 1
   def caesar_cipher(string, shift)
     encrypter = ([*('a'..'z')].zip([*('a'..'z')].rotate(shift)) + [*('A'..'Z')].zip([*('A'..'Z')].rotate(shift))).to_h
-    string.chars.map { |char| encrypter.fetch(char, char) }
+    string.chars.map { |char| encrypter.fetch(char, char) }.join
   end
 
   # Solution 2
@@ -16,7 +16,7 @@ module CaesarCipher
     alphabet = Array('A'..'Z')
     caps = alphabet.zip(alphabet.rotate(shift)).to_h
     encrypter = non_caps.merge(caps)
-    string.chars.map { |char| encrypter.fetch(char, char) }
+    string.chars.map { |char| encrypter.fetch(char, char) }.join
   end
 
   # Solution 3
@@ -39,28 +39,6 @@ module CaesarCipher
         new_string_array.push(char)
       end
     end
-    new_string_array
+    new_string_array.join
   end
 end
-
-# # a simple UI to get input from the user and select solution
-# def caesar_cipher_ui
-#   puts 'Enter a string to encrypt:'
-#   string = gets.chomp
-#   puts 'Enter the shift factor:'
-#   shift = gets.chomp.to_i
-#   puts 'Select a solution (1, 2, or 3):'
-#   solution = gets.chomp.to_i
-#   case solution
-#   when 1
-#     puts caesar_cipher(string, shift).join
-#   when 2
-#     puts caesar_cipher2(string, shift).join
-#   when 3
-#     puts caesar_cipher3(string, shift).join
-#   else
-#     puts 'Invalid option'
-#   end
-# end
-
-# caesar_cipher_ui

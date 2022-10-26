@@ -43,28 +43,3 @@ module BubbleSort
     array
   end
 end
-
-# p 'Do you want to run a generic test or a custom test?'
-# p 'Enter 1 for generic test or 2 for custom test'
-# array = []
-# case gets.chop
-# when '1'
-#   array = [4, 3, 78, 2, 0, 2]
-# when '2'
-#   p 'Enter the array of numbers separated by space'
-#   array = gets.chop.split.map(&:to_i)
-# end
-# p 'Which solution do you want to run?'
-# p 'Enter 1, 2 , 3 or all'
-# case gets.chop
-# when '1'
-#   p bubble_sort(array)
-# when '2'
-#   p bubble_sort2(array)
-# when '3'
-#   p bubble_sort3(array)
-# when 'all'
-#   p bubble_sort(array)
-#   p bubble_sort2(array)
-#   p bubble_sort3(array)
-# end

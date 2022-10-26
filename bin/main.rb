@@ -1,4 +1,4 @@
-require_relative '../lib/program'
+require_relative '../lib/menu'
 
-program = Program.new
-program.run
+menu = Menu.new
+menu.main_menu
